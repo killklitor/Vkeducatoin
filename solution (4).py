@@ -1,0 +1,5 @@
+a=input()
+b=a.lower()
+c=b.replace('!', '').replace('%', '').replace('#', '').replace('@', '')
+print(a.count('!') + a.count('%') + a.count('#') + a.count('@'))
+print(c)
