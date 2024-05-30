@@ -1,0 +1,25 @@
+import datetime
+
+string_datetime = input()
+
+def parse_time(s):
+    # Разделяем строку на части
+    parts = s.split()
+    
+    # Преобразуем каждую часть в int
+    year = int(parts[0])
+    month = int(parts[1])
+    day = int(parts[2])
+    hour = int(parts[3])
+    minute = int(parts[4])
+    second = int(parts[5])
+    
+    # Создаем объект datetime.datetime
+    dt = datetime.datetime(year, month, day, hour, minute, second)
+    
+    # Сдвигаем на один день вперед
+    dt += datetime.timedelta(days=1)
+    
+    return dt
+
+print(parse_time(string_datetime))
