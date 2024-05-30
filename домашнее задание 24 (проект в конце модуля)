@@ -1,0 +1,23 @@
+from typing import Callable, Iterable
+
+def cache_deco(func: Callable[[object], object]) -> Callable[[object], object]:
+    cache = {}
+
+    def wrapper(arg: object) -> object:
+        if arg not in cache:
+            cache[arg] = func(arg)
+        return cache[arg]
+
+    return wrapper
+
+def solution(func_map: Callable[[object], object], func_filter: Callable[[object], bool], data: Iterable[object]) -> Iterable[object]:
+    for item in data:
+        if func_filter(item):
+            yield func_map(item)
+            next(data, None)
+
+code = []
+while data := input():
+    code.append(data)
+code = "\n".join(code)
+exec(code)
