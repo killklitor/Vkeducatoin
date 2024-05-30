@@ -1,0 +1,15 @@
+import os
+
+text = input()
+
+def write_and_read(text):
+    # Создаем файл и записываем в него текст
+    with open("output.txt", "w") as file:
+        file.write(text)
+
+    # Читаем текст из файла и возвращаем его
+    with open("output.txt", "r") as file:
+        return file.read()
+
+print(write_and_read(text))
+
