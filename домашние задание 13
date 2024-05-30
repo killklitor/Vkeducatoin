@@ -1,0 +1,7 @@
+def process_string(input_string):
+    lowered_string = input_string.lower()
+    cleaned_string = ''.join(char for char in lowered_string if char not in "!@#%")
+    if cleaned_string[0] == '!':
+        return cleaned_string.upper()
+    else:
+        return cleaned_string.lower()
