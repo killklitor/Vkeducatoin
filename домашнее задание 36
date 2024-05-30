@@ -1,0 +1,8 @@
+from itertools import zip_longest
+from typing import List, Tuple
+
+def fill_missing_values(values_list_1: List[int], values_list_2: List[int]) -> List[Tuple[int, int]]:
+    result = []
+    for value1, value2 in zip_longest(values_list_1, values_list_2, fillvalue=1):
+        result.append((value1 or 1, value2 or 1))
+    return result
