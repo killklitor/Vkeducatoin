@@ -1,0 +1,26 @@
+import datetime
+from collections import Counter
+from typing import List
+
+def most_common_months(dates: List[str], n: int) -> List[int]:
+    # Преобразуем строки в объекты datetime.datetime
+    dt_objects = [datetime.datetime.fromisoformat(date) for date in dates]
+    
+    # Получаем список месяцев
+    months = [dt.month for dt in dt_objects]
+    
+    # Используем Counter для подсчета частоты месяцев
+    month_counts = Counter(months)
+    
+    # Получаем топ n самых частых месяцев
+    top_months = month_counts.most_common(n)
+    
+    # Возвращаем список месяцев
+    return [month for month, _ in top_months]
+
+# Пример использования
+code = []
+while data := input():
+    code.append(data)
+code = "\n".join(code)
+exec(code)
